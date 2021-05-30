@@ -4,8 +4,21 @@
     "discord.js": "^12.5.3"
   },
   "name": "dceasybuttons",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "😎 Discord buttons with easy callback system (onClick)",
+  "keywords": [
+    "discord",
+    "dc",
+    "buttons",
+    "easy",
+    "fast",
+    "callback",
+    "click",
+    "onclick",
+    "discordbuttons",
+    "armagan",
+    "thearmagan"
+  ],
   "main": "EasyButtons.js",
   "repository": "https://github.com/TheArmagan/dceasybuttons.git",
   "author": "Kıraç Armağan Önal <kiracarmaganonal@gmail.com>",
