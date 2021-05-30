@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "discord-buttons": "^2.4.1",
+    "discord.js": "^12.5.3"
+  },
+  "name": "dceasybuttons",
+  "version": "0.1.0",
+  "description": "😎 Discord buttons with easy callback system (onClick)",
+  "main": "EasyButtons.js",
+  "repository": "https://github.com/TheArmagan/dceasybuttons.git",
+  "author": "Kıraç Armağan Önal <kiracarmaganonal@gmail.com>",
+  "license": "GNU GPL v3",
+  "private": false
+}
