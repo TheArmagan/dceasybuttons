@@ -15,7 +15,7 @@ client.on("message", async (message) => {
       {
         // These are discord-button data.
         label: "Cool Button",
-        style: "gray",
+        style: "gray", // "blurple" or "gray" or "green" or "red"
         disabled: false,
 
         // With defer option button never gives 
