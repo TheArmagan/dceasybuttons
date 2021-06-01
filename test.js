@@ -35,7 +35,7 @@ client.on("message", async (message) => {
     let msgText = "Click button to change button name to your name. (Button automatically gets disabled after 10 seconds of inactivity.)";
     
     // Creating a message with myButton.
-    let msg = await message.channel.send(msgText, { components: [ new MessageActionRow({ components: [myButton] }) ] });
+    let msg = await message.channel.send(msgText, myButton);
 
     // Creating callback using onClick function
     // for updating button label with new clicker's
@@ -44,7 +44,7 @@ client.on("message", async (message) => {
       // Set muButton's new label to clicker's tag.
       myButton.label = event.clicker.user.tag;
       // And update message with new buttons.
-      msg.edit(msgText, { components: [new MessageActionRow({ components: [myButton] })] })
+      msg.edit(msgText, myButton)
     });
 
     // On timeout disable buttons.
@@ -53,7 +53,7 @@ client.on("message", async (message) => {
       // can't click it anymore.
       myButton.disabled = true;
       // And update message with new buttons.
-      msg.edit(`${msgText} (Ended)`, { components: [new MessageActionRow({ components: [myButton] })] })
+      msg.edit(`${msgText} (Ended)`, myButton)
     });
 
     // Available callbacks: onClick(event, buttonCallback), onTimeout(buttonCallback), onDispose()

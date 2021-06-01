@@ -72,7 +72,7 @@ class ButtonCallback {
    */
   constructor(opts = {}) {
     this.id = `edb${Math.floor(Math.random() * 0xffffffffffff).toString("36")}`;
-    this.timeout = opts.timeout || -1;
+    this.timeout = opts.timeout || 60000;
 
     if (this.timeout > 0) {
 
