@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "discord-buttons": "^2.4.1",
+    "discord-buttons": "^3.0.1",
     "discord.js": "^12.5.3"
   },
   "name": "dceasybuttons",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "😎 Discord buttons with easy callback system (onClick)",
   "keywords": [
     "discord",

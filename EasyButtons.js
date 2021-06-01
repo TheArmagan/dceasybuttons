@@ -177,7 +177,7 @@ class ButtonCallback {
 
 /**
  * @param {{timeout: number, defer: boolean, [key:string]: any}} data Message button & callback timeout data.
- * @returns {MessageButton & {callback: ButtonCallback}}
+ * @returns {import("discord-buttons/typings/v12/Classes/MessageButton") & {callback: ButtonCallback}}
  */
 function createButton(data = {}) {
   let callback = new ButtonCallback({ timeout: data.timeout || -1 });

@@ -4,8 +4,9 @@
 ## Example
 ```js
 const { Client } = require("discord.js");
+const { MessageActionRow } = require("discord-buttons");
 const client = new Client();
-const easyButtons = require("dceasybuttons");
+const easyButtons = require(".");
 
 // Only for one time while starting the entire project
 easyButtons.attachToClient(client);
@@ -15,7 +16,6 @@ client.on("message", async (message) => {
   let args = message.content.split(" ");
 
   if (args[0] == `abc!testeasybuttons`) {
-    // Example code starts here
 
     const myButton = easyButtons.createButton(
       {
@@ -34,12 +34,13 @@ client.on("message", async (message) => {
         timeout: 10000
       }
     );
+
     
     // Creating a message text for later use.
     let msgText = "Click button to change button name to your name. (Button automatically gets disabled after 10 seconds of inactivity.)";
-
+    
     // Creating a message with myButton.
-    let msg = await message.channel.send(msgText, { buttons: [myButton] });
+    let msg = await message.channel.send(msgText, { components: [ new MessageActionRow({ components: [myButton] }) ] });
 
     // Creating callback using onClick function
     // for updating button label with new clicker's
@@ -48,7 +49,7 @@ client.on("message", async (message) => {
       // Set muButton's new label to clicker's tag.
       myButton.label = event.clicker.user.tag;
       // And update message with new buttons.
-      msg.edit(msgText, { buttons: [myButton] })
+      msg.edit(msgText, { components: [new MessageActionRow({ components: [myButton] })] })
     });
 
     // On timeout disable buttons.
@@ -57,13 +58,10 @@ client.on("message", async (message) => {
       // can't click it anymore.
       myButton.disabled = true;
       // And update message with new buttons.
-      msg.edit(`${msgText} (Ended)`, { buttons: [myButton] })
+      msg.edit(`${msgText} (Ended)`, { components: [new MessageActionRow({ components: [myButton] })] })
     });
 
-    // Available callbacks: 
-    // - onClick(event, buttonCallback)
-    // - onTimeout(buttonCallback)
-    // - onDispose()
+    // Available callbacks: onClick(event, buttonCallback), onTimeout(buttonCallback), onDispose()
     
   }
 
@@ -71,5 +69,9 @@ client.on("message", async (message) => {
 
 client.login("<your token>");
 ```
+
+## Updates
+### 0.1.3
+- Now supports latest version of `discord-buttons`
 
 Created by [Kıraç Armağan Önal](http://thearmagan.github.io)
